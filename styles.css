@@ -1,0 +1,174 @@
+/* Andrew Nyland (andrewnyland.net) started 8/9/2020. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /*importing all now, can cleanse later */
+
+
+/* FOR REFERENCE:
+selector { 														//tag, .class, #id
+	attribute: value;								//ex: padding: top/bottom left/right
+}
+
+//Attributes are supposed to be in an order/hierarchy, which I will try to follow (I'm kinda making this up rn but basing it off what I read years ago):
+Font: A character to glyph mapping. The 1-to-1 'mapping' doesn't entirely hold up when you consider ligatures and other advanced font features, but in general it is a good mental model. The font determines the shape of the characters.
+Text styles: The way the layout and presentation is computed.
+Box model: margin/padding/border
+Position: display/arrangement
+...
+Animations/timing
+*/
+
+body {
+	background: lavender;
+	margin: 0;
+}
+iframe {max-width: 100%;}
+/* Universal Text styling */
+h1,h2,h3 {}
+h4,h5,h6 {}
+
+/* Header */
+header {
+	font-family: 'Roboto', sans-serif;
+	border-bottom: 1px dashed blue;
+	background: white;
+}
+header .column2 ul {
+	display: flex;
+	list-style-type: none;
+}
+header .column2 li {
+}
+header .column2 li > a {
+	text-decoration: none;
+	font-weight: bold;
+}
+header .column2 li > a:hover {
+	color: black;
+	border-bottom: 1px dashed #CCC;
+}
+/* Header sizing */
+header {
+	padding: 1.5em 1em;
+}
+header .column2 ul {
+	padding: 1em 0;
+	margin: 0;
+	margin-top: 0.5em;
+}
+header .column2 li > a {
+	padding: 1em;
+}
+@media screen and (max-width: 900px) {
+	.column2 {
+		display: block;
+	}
+	.left, .right {
+		width: 100%;
+		display: block;
+	}
+	.right {
+		justify-content: center;
+	}
+	.carousel ul > li {
+		width: 70vw;
+	}
+}
+/* End header sizing */
+
+
+
+/* Sections */
+section {
+	padding-bottom: 2em;
+}
+section a {
+	color: inherit;
+}
+
+
+#about-section {
+	border-bottom: 2px solid gray;
+}
+#synopsis-section {
+	font-family: Marion, Georgia, 'Roboto', sans-serif;
+	line-height: 1.4;
+	color: lavender;
+	text-align: center;
+	background: #504A50;
+	padding: 1.5em;
+	box-shadow: 0 0 30px 5px #323 inset;
+}
+#social-section {}
+#contact-section {}
+#motto-copyright-section {
+	color: #DDD;
+	padding: 3em;
+	background: #323;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+/* Individual elements */
+.page-wrap {
+	max-width: 1280px;
+	margin: 0 auto;
+	width: 80%;
+}
+#page-title {
+	background-image: url("https://assets.codepen.io/1625979/OrigLogo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+	height: 4em;
+	width: 10.4em;
+}
+img#prof-pic {
+	width: 300px;
+	margin: 0 1em 1em 0;
+}
+#prof-pic {
+	background: url("mariposasmassage.jpeg") no-repeat;
+	background-size: cover;
+	width: 250px;
+	height: 250px;
+}
+#CTA {
+	background: #64DD17;
+	padding: 1em;
+	border: 1px solid #5D0;
+	border-radius: 6px;
+}
+.column2 {
+	display: flex;
+}
+.left, .right {
+	width: 50%;
+	display: flex;
+}
+.right {text-align: right; justify-content: flex-end;}
+
+.carousel {
+	position: relative;
+	width: 100%;
+	overflow-x: scroll;
+}
+.carousel ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	
+	display: flex; /* possibly a cheap fix */
+	width: 150vw;
+}
+.carousel ul > li { /* card */
+	color: #CCC;
+	width: 30vw;
+	padding: 2em;
+	background: #557;
+	margin: 1em;
+	transition: all ease 0.4s;
+}
+.carousel ul > li:hover {
+	color: white;
+}
+
